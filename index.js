@@ -28,15 +28,19 @@ const questions = [
     { 
       type: 'list',
       name: 'shape',
-      message: 'Which shape would you like to use?',
+      message: 'Which shape would you like to use ?',
       choices: ['circle', 'square', 'triangle'],
     },
     ];
 
 
-    .then(data=>{
-        if (data.shape === "triangle"){
-             data.svg = `
+    .then(data =>{
+        if (data.shape === "triangle"){ // need to call a function in each questions
+          //make a function that takes the data
+           //function triangle/square/circle = {} //functions for the shapes needs to return to html
+          //calling a lot of functions - main program - user data
+
+             data.svg = ` 
              <svg height="150" width="300">
 
              <polygon points="150, 18 244, 182 56, 182" fill="blue" />
@@ -70,12 +74,12 @@ const questions = [
     <title>Document</title>
 </head>
 <body>
-${data.svg}
+${data.svg} 
 </body>
 </html>
         `)
     })
-
+//think about Jquery to set 
 
 // Function for the README file
 // function writeToFile(fileName, data) {}
