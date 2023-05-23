@@ -58,7 +58,10 @@ This project is under [MIT](https://choosealicense.com/licenses/mit/) license.
 * 
 
 ## References
-* 
+* [Constructor MDN's explanation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
+* [Classes MDN's explanation](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_programming)
+* [THOSCALLE](https://www.youtube.com/watch?v=GJYMcLus3v0&t=18s) Thomas' Object-Oriented Programming SVG Logo Maker
+* [Chat.openai.com](https://chat.openai.com/) to explain further about the use of classes, render and extends
 
 ## Acknowledgements and Credits
 - Jacob Carver - weekly bootcamp tutor

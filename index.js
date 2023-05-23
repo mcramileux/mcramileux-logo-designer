@@ -1,13 +1,13 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const {Circle, Square, Triangle} = require('./lib')
-// const {} = require('./lib') 
+const {Circle, Square, Triangle} = require('./lib/shapes');
+// const {} = require('./lib') shape.test.js????
+// const {generatedLogo} = require() ---part of the acceptance criteria
 
 // Below are the array of questions
-
-const questions = [
-    // inquirer
-    // .prompt([
+// const questions = [
+    inquirer
+    .prompt([
     { 
       type: 'input',
       name: 'initials',
@@ -17,13 +17,13 @@ const questions = [
       type: 'list',
       name: 'textColor',
       message: 'Please enter a text color keyword (OR a hexadecimal number)',
-      choices: ['white', 'black', 'gray', 'brown'],
+      // choices: ['white', 'black', 'gray', 'brown'],
     },
     { 
       type: 'list',
       name: 'shapeColor',
       message: 'Please enter a shape color keyword (OR a hexadecimal number)',
-      choices: ['blue', 'red', 'purple', 'pink'],
+      // choices: ['blue', 'red', 'purple', 'pink'],
     },
     { 
       type: 'list',
@@ -31,13 +31,13 @@ const questions = [
       message: 'Which shape would you like to use ?',
       choices: ['circle', 'square', 'triangle'],
     },
-    ];
-
-
-    .then(data =>{
-        if (data.shape === "triangle"){ // need to call a function in each questions
+  ])
+  
+    .then(data => {
+        if (data.shape === "triangle"){ 
+          // need to call a function in each questions
           //make a function that takes the data
-           //function triangle/square/circle = {} //functions for the shapes needs to return to html
+          //function triangle/square/circle = {} //functions for the shapes needs to return to html
           //calling a lot of functions - main program - user data
 
              data.svg = ` 
