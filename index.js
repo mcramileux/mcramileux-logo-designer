@@ -1,5 +1,8 @@
+// Calling inquirer and fs
 const inquirer = require('inquirer');
 const fs = require('fs');
+
+// Importing the shapes in the folder ./lib/shapes
 const {Circle, Square, Triangle} = require('./lib/shapes');
 
 // Below are the array of questions
@@ -32,70 +35,44 @@ function promptQuestions (){
   ])
 };
 
-  function init () {
-    promptQuestions(prompts)
-      .then((answers) => 
-        const 
-      )};
+// Function has been created to initialize app
+// Followed the Mini-Project solved solutions
+  function init() {
+    inquirer
+      .prompt(prompts)
+        .then((answers) => {
+          console.log(answers);
+      });
+      
+      const svgMaker = generatedLog(answers);
+        console.log(svgMaker);
+
+    return writeFile(
+      join(__dirname, '..', 'examples', 'logo.svg'),
+        createDocument(shapes)
+    );
+
+    .then(() => console.log('Generated logo.svg'))
+    .catch((error) => console.error(err));  
+
+  
+    fs.writeFile(fileName, svgLogo, (err) =>
+      err ? console.error(err) : console.log('Success! You have generated a logo.')
+);
+
+}
     
-    fs.writeFile ('createLogoPath') =>
-
-    // .then(data => {
-    //     if (data.shape === "triangle"){ 
-          // need to call a function in each questions
-          //make a function that takes the data
-          //function triangle/square/circle = {} //functions for the shapes needs to return to html
-          //calling a lot of functions - main program - user data
-
-//              data.svg = ` 
-//              <svg height="150" width="300">
-
-//              <polygon points="150, 18 244, 182 56, 182" fill="blue" />
-//          </svg>
-//             `
-//         }
-//         else if (data.shape==="square") {
-//             data.svg = `
-//             <svg height="150" width="300">
-
-//             <rect x="50" y="30" width="150" height="150" fill="blue" />
-//         </svg>
-//             `
-//         }
-//         else {
-//             data.svg = `
-//             <svg height="100" width="100">
-
-//             <circle cx="50" cy="50" r="40" fill="blue" />
-//         </svg>
-//             `
-//         }
-
-//         fs.writeFileSync("./dist/shape.html", `
-//         <!DOCTYPE html>
-// <html lang="en">
-// <head>
-//     <meta charset="UTF-8">
-//     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//     <title>Document</title>
-// </head>
-// <body>
-// ${data.svg} 
-// </body>
-// </html>
-//         `)
-//     })
-//think about Jquery to set 
-
 // Function to write data to a file
-// function writeToFile(fileName, data) {}
+// function writeToFile(fileName, answers) {}
 
 // Generate the SVG Logo
 // const {generatedLogo} = require() ---part of the acceptance criteria
-    function generatedLog (){
+    function generatedLog (answers){
+      const { initials, textColor, shapeColor, shape } = answers;
 
     }
 // Function for the README file
 // function to save the logo in the directory ---must go in the examples' folder
+
 // function call to initialize the application
+init();
