@@ -39,7 +39,7 @@ function promptQuestions (){
 // Followed the Mini-Project solved solutions
   function init() {
     inquirer
-      .prompt(prompts)
+      .prompt()
         .then((answers) => {
           console.log(answers);
       });
@@ -52,7 +52,7 @@ function promptQuestions (){
         createDocument(shapes)
     );
 
-    .then(() => console.log('Generated logo.svg'))
+    then(() => console.log('Generated logo.svg'))
     .catch((error) => console.error(err));  
 
   
