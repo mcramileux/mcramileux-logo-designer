@@ -1,9 +1,12 @@
 // Calling inquirer and fs
 const inquirer = require('inquirer');
-const fs = require('fs');
+const fs = require('fs/promises');
+
+// Written path will be saved into ./examples
+const { join } = require('path');
 
 // Importing the shapes in the folder ./lib/shapes
-const {Circle, Square, Triangle} = require('./lib/shapes');
+const { generatedLogo } = require('./lib/shapes');
 
 // Below are the array of questions
 function promptQuestions (){
@@ -36,41 +39,36 @@ function promptQuestions (){
 };
 
 // Function has been created to initialize app
-// Followed the Mini-Project solved solutions
+// Followed the Mini-Project solved solution
   function init() {
-    inquirer
-      .prompt()
+    promptQuestions()
         .then((answers) => {
           console.log(answers);
       });
       
-      const svgMaker = generatedLog(answers);
+      const svgMaker = generatedLogo(answers);
         console.log(svgMaker);
 
     return writeFile(
       join(__dirname, '..', 'examples', 'logo.svg'),
         createDocument(shapes)
-    );
+    )
 
-    then(() => console.log('Generated logo.svg'))
-    .catch((error) => console.error(err));  
+    .then(() => console.log('Generated logo.svg'))
+      .catch((err) => console.error(err));
+   };
+ 
+    fs.writeFile('logo.svg', path, (err) =>
+      err ? console.error(err) : console.log('Success! You have generated a logo.'));
 
-  
-    fs.writeFile(fileName, svgLogo, (err) =>
-      err ? console.error(err) : console.log('Success! You have generated a logo.')
-);
 
-}
-    
-// Function to write data to a file
-// function writeToFile(fileName, answers) {}
+// // Generate the SVG Logo
+// // const {generatedLogo} = require() ---part of the acceptance criteria
+//     function generatedLogo (answers){
+//       const { initials, textColor, shapeColor, shape } = answers;
+//       //compare with the mini-project
 
-// Generate the SVG Logo
-// const {generatedLogo} = require() ---part of the acceptance criteria
-    function generatedLog (answers){
-      const { initials, textColor, shapeColor, shape } = answers;
-
-    }
+//     }
 // Function for the README file
 // function to save the logo in the directory ---must go in the examples' folder
 
