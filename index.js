@@ -10,7 +10,7 @@ const { generatedLogo } = require('./lib/shapes');
 
 // Below are the array of questions
 function promptQuestions (){
-  return inquirer
+   inquirer
     .prompt([
     { 
       type: 'input',
@@ -18,16 +18,14 @@ function promptQuestions (){
       message: 'Please enter up to three characters for your logo:',
     },
     { 
-      type: 'list',
+      type: 'input',
       name: 'textColor',
       message: 'Please enter a text color keyword (OR a hexadecimal number)',
-      // choices: ['white', 'black', 'gray', 'brown'],
     },
     { 
-      type: 'list',
+      type: 'input',
       name: 'shapeColor',
       message: 'Please enter a shape color keyword (OR a hexadecimal number)',
-      // choices: ['blue', 'red', 'purple', 'pink'],
     },
     { 
       type: 'list',
@@ -36,30 +34,41 @@ function promptQuestions (){
       choices: ['circle', 'square', 'triangle'],
     },
   ])
+  .then((answers) => {    
+    console.log('Success! You have generated a logo.');
+  })
+  .catch((error) => {
+    console.log('error');
+    if (error.isTtyError) {
+      // Prompt couldn't be rendered in the current environment
+    } else {
+      // Something else went wrong
+    }
+  })
 };
+
+
 
 // Function has been created to initialize app
 // Followed the Mini-Project solved solution
   function init() {
-    promptQuestions()
-        .then((answers) => {
-          console.log(answers);
-      });
+    promptQuestions();
+    
       
-      const svgMaker = generatedLogo(answers);
-        console.log(svgMaker);
+      // const svgMaker = generatedLogo(answers);
+      //   console.log(svgMaker);
 
-    return writeFile(
-      join(__dirname, '..', 'examples', 'logo.svg'),
-        createDocument(shapes)
-    )
+    // return writeFile(
+    //   join(__dirname, '..', 'examples', 'logo.svg'),
+    //     createDocument(shapes)
+    // )
 
-    .then(() => console.log('Generated logo.svg'))
-      .catch((err) => console.error(err));
+  //   then(() => console.log('Generated logo.svg'))
+  //     .catch((err) => console.error(err));
    };
  
-    fs.writeFile('logo.svg', path, (err) =>
-      err ? console.error(err) : console.log('Success! You have generated a logo.'));
+    // fs.writeFile('logo.svg','', (err) =>
+    //   err ? console.error(err) : console.log('Success! You have generated a logo.'));
 
 
 // // Generate the SVG Logo
