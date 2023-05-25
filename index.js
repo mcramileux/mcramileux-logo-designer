@@ -3,10 +3,10 @@ const inquirer = require('inquirer');
 const fs = require('fs/promises');
 
 // Written path will be saved into ./examples
-const { join } = require('path');
+// const { join } = require('path');
 
 // Importing the shapes in the folder ./lib/shapes
-const { generatedLogo } = require('./lib/shapes');
+const { Circle, Square, Triangle } = require('./lib/shapes');
 
 // Below are the array of questions
 function promptQuestions (){
@@ -37,16 +37,24 @@ function promptQuestions (){
   .then((answers) => {    
     console.log('Success! You have generated a logo.');
 
-    const svg = generatedLogo(answers);
-
-      svg.setText(text, textColor);
-      svg.setShape(shape)
+    let shape;
+    if (answers.shape == "Circle") {
+      shape = new Circle();
+    }
+    else if (answers.shape == "Square") {
+      shape = new Square();
+    }
+    else if (answers.shape == "Triangle") {
+      shape = new Triangle();
+    }
+      shape.setText(text, textColor);
+      shape.setShape(shape, shapeColor);
       //generating the logo and saving it into a folder
     writeFile('examples', svg.render)
   })
 
-  .catch((error) => {
-    console.log('error');
+  .catch(error => {
+    console.log(error);
     if (error.isTtyError) {
       // Prompt couldn't be rendered in the current environment
     } else {
