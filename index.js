@@ -1,6 +1,6 @@
 // Calling inquirer and fs
 const inquirer = require('inquirer');
-const fs = require('fs/promises');
+const fs = require('fs');
 
 // Written path will be saved into ./examples
 // const { join } = require('path');
@@ -38,64 +38,53 @@ function promptQuestions (){
     console.log('Success! You have generated a logo.');
 
     let shape;
-    if (answers.shape == "Circle") {
-      shape = new Circle();
-    }
-    else if (answers.shape == "Square") {
-      shape = new Square();
-    }
-    else if (answers.shape == "Triangle") {
-      shape = new Triangle();
-    }
-      shape.setText(text, textColor);
-      shape.setShape(shape, shapeColor);
-      //generating the logo and saving it into a folder
-    writeFile('examples', svg.render)
-  })
+      let shapeColor = answers.shapeColor;
+      if (answers.shape === 'circle') {
+          shape = new Circle (shapeColor)
+      }
+      if (answers.shape === 'square') {
+        shape = new Square (shapeColor)
+      }
+      if (answers.shape === 'triangle') {
+          shape = new Triangle (shapeColor)
+      }
+    
+      let svg = 
+          `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200">
+          ${shape.render()}<text x="150" y="125" font-size="60" text-anchor="middle" 
+          fill="${answers.textColor}">${answers.initials}</text></svg>`
+      fs.writeFileSync('./examples/logo.svg', svg);
+  });
 
-  .catch(error => {
-    console.log(error);
-    if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
-    }
-  })
+  //   if (answers.shape == "circle") {
+  //     shape = new Circle(answers.shapeColor);
+  //   }
+  //   else if (answers.shape == "square") {
+  //     shape = new Square(answers.shapeColor);
+  //   }
+  //   else if (answers.shape == "triangle") {
+  //     shape = new Triangle(answers.shapeColor);
+  //   }
+  //    console.log(shape.render());
+  //     //generating the logo and saving it into a folder
+  //   writeFile('examples', svg.render)
+  // })
+
+  // .catch(error => {
+  //   console.log(error);
+  //   if (error.isTtyError) {
+  //     // Prompt couldn't be rendered in the current environment
+  //   } else {
+  //     // Something else went wrong
+  //   }
+  // })
 };
-
-
 
 // Function has been created to initialize app
 // Followed the Mini-Project solved solution
   function init() {
     promptQuestions();
-    
-      
-      // const svgMaker = generatedLogo(answers);
-      //   console.log(svgMaker);
-
-    // return writeFile(
-    //   join(__dirname, '..', 'examples', 'logo.svg'),
-    //     (shapes)
-    // )
-
-  //   then(() => console.log('Generated logo.svg'))
-  //     .catch((err) => console.error(err));
    };
- 
-    // fs.writeFile('logo.svg','', (err) =>
-    //   err ? console.error(err) : console.log('Success! You have generated a logo.'));
-
-
-// // Generate the SVG Logo
-// // const {generatedLogo} = require() ---part of the acceptance criteria
-//     function generatedLogo (answers){
-//       const { initials, textColor, shapeColor, shape } = answers;
-//       //compare with the mini-project
-
-//     }
-// Function for the README file
-// function to save the logo in the directory ---must go in the examples' folder
 
 // function call to initialize the application
 init();
