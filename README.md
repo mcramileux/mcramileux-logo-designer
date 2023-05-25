@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-
+This application creates a simple logo using Node.js via Integrated Terminal that will save as an SVG file. With the series of prompts to answer, it will determine what type of logo the user wants to create. 
 
 ## Table of Contents
 - [MCRAMILEUX's Logo Designer](#mcramileuxs-logo-designer)
@@ -14,7 +14,7 @@
   - [License](#license)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Samples](#samples)
+  - [Examples](#examples)
   - [Screenshots](#screenshots)
   - [Video](#video)
   - [Contributions](#contributions)
@@ -28,34 +28,44 @@
 * JavaScript
 * Node.js
 * Inquirer
+* SVG
+* Jest NPM package
 * Screencastify
 
 ## License
 This project is under [MIT](https://choosealicense.com/licenses/mit/) license.
 
 ## Installation
-* 
+* Navigate to this [repository](https://github.com/mcramileux/mcramileux-logo-designer).
+* Open your terminal and create a new folder for this project.
+* Clone the repository on your local machine.
 
 ## Usage
-* 
+* Run the program using your preferred terminal, the most common is VS Code.
+* By typing node index.js, the following questions about you will display.
+* Answer the following questions to create a logo and once it is finish, the logo will be saved in the examples' folder.
+* CHeck the finish logo or follow the video. ----ADD HERE THE LINK
 
-## Samples
-* 
+## Examples 
+* Here are the following logos created: ----ADD PHOTOS DO NOT FORGET
 
-## Screenshots
-* 
+## Screenshots 
+* ----ADD PHOTOS DO NOT FORGET
 
-## Video
-* 
+## Video 
+* ---ADD VIDEOS DO NOT FORGET
+  
 
 ## Contributions
-* 
+* Contributions to this project won't be accepted as this is the reflection of the author's work hence the following questions and answers. Furthermore, forking or creating a pull request is acceptable.
+
 
 ## Questions
-* 
-
+* For more questions or inquiries, please contact the author at [GitHub](https://github.com/mcramileux) or email kristineramilo21@gmail.com.
+  
 ## Tests
-* 
+* Run on the terminal, node index.js
+* Answer the following questions to create your logo.
 
 ## References
 * [Constructor MDN's explanation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
