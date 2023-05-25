@@ -33,6 +33,11 @@ function promptQuestions (){
       message: 'Which shape would you like to use ?',
       choices: ['circle', 'square', 'triangle'],
     },
+    { 
+      type: 'input',
+      name: 'fileName',
+      message: 'Please enter a file name.',
+    },
   ])
   .then((answers) => {    
     console.log('Success! You have generated a logo.');
@@ -51,33 +56,10 @@ function promptQuestions (){
     
       let svg = 
           `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200">
-          ${shape.render()}<text x="150" y="125" font-size="60" text-anchor="middle" 
+          ${shape.render()}<text x="100" y="125" font-size="60" text-anchor="middle" 
           fill="${answers.textColor}">${answers.initials}</text></svg>`
-      fs.writeFileSync('./examples/logo.svg', svg);
+      fs.writeFileSync(`./examples/${answers.fileName}.svg`, svg);
   });
-
-  //   if (answers.shape == "circle") {
-  //     shape = new Circle(answers.shapeColor);
-  //   }
-  //   else if (answers.shape == "square") {
-  //     shape = new Square(answers.shapeColor);
-  //   }
-  //   else if (answers.shape == "triangle") {
-  //     shape = new Triangle(answers.shapeColor);
-  //   }
-  //    console.log(shape.render());
-  //     //generating the logo and saving it into a folder
-  //   writeFile('examples', svg.render)
-  // })
-
-  // .catch(error => {
-  //   console.log(error);
-  //   if (error.isTtyError) {
-  //     // Prompt couldn't be rendered in the current environment
-  //   } else {
-  //     // Something else went wrong
-  //   }
-  // })
 };
 
 // Function has been created to initialize app
