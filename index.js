@@ -36,7 +36,15 @@ function promptQuestions (){
   ])
   .then((answers) => {    
     console.log('Success! You have generated a logo.');
+
+    const svg = generatedLogo(answers);
+
+      svg.setText(text, textColor);
+      svg.setShape(shape)
+      //generating the logo and saving it into a folder
+    writeFile('examples', svg.render)
   })
+
   .catch((error) => {
     console.log('error');
     if (error.isTtyError) {
@@ -60,7 +68,7 @@ function promptQuestions (){
 
     // return writeFile(
     //   join(__dirname, '..', 'examples', 'logo.svg'),
-    //     createDocument(shapes)
+    //     (shapes)
     // )
 
   //   then(() => console.log('Generated logo.svg'))
