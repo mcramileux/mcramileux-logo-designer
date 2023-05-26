@@ -46,19 +46,32 @@ function promptQuestions (){
       let shapeColor = answers.shapeColor;
       if (answers.shape === 'circle') {
           shape = new Circle (shapeColor)
+
+
+          let svg = 
+          `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200">
+          ${shape.render()}<text x="100" y="115" font-size="50" text-anchor="middle" 
+          fill="${answers.textColor}">${answers.initials}</text></svg>`
+      fs.writeFileSync(`./examples/${answers.fileName}.svg`, svg);
       }
       if (answers.shape === 'square') {
         shape = new Square (shapeColor)
+
+        let svg = 
+        `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200">
+        ${shape.render()}<text x="90" y="145" font-size="50" text-anchor="middle" 
+        fill="${answers.textColor}">${answers.initials}</text></svg>`
+    fs.writeFileSync(`./examples/${answers.fileName}.svg`, svg);
       }
       if (answers.shape === 'triangle') {
           shape = new Triangle (shapeColor)
-      }
-    
-      let svg = 
+
+          let svg = 
           `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200">
-          ${shape.render()}<text x="100" y="125" font-size="60" text-anchor="middle" 
+          ${shape.render()}<text x="150" y="160" font-size="50" text-anchor="middle" 
           fill="${answers.textColor}">${answers.initials}</text></svg>`
       fs.writeFileSync(`./examples/${answers.fileName}.svg`, svg);
+      }
   });
 };
 

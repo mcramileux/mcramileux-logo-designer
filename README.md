@@ -75,6 +75,7 @@ This project is under [MIT](https://choosealicense.com/licenses/mit/) license.
 * [SVG Tutorial](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial)
 * [Inquirer.js](https://www.npmjs.com/package/inquirer)
 * [Writing files with Node.js](https://nodejs.dev/en/learn/writing-files-with-nodejs/)
+* [Unsplash](https://unsplash.com/)for trying the color picker in getting the hexadecimal numbers for the color
 
 ## Acknowledgements and Credits
 - Jacob Carver - weekly bootcamp tutor
