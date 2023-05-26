@@ -2,9 +2,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// Written path will be saved into ./examples
-// const { join } = require('path');
-
 // Importing the shapes in the folder ./lib/shapes
 const { Circle, Square, Triangle } = require('./lib/shapes');
 
@@ -47,30 +44,34 @@ function promptQuestions (){
       if (answers.shape === 'circle') {
           shape = new Circle (shapeColor)
 
-
-          let svg = 
-          `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200">
-          ${shape.render()}<text x="100" y="115" font-size="50" text-anchor="middle" 
-          fill="${answers.textColor}">${answers.initials}</text></svg>`
-      fs.writeFileSync(`./examples/${answers.fileName}.svg`, svg);
+        // Edited the x's and y's so that the text will be in the middle and inside the shape
+        let svg = 
+        `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200">
+        ${shape.render()}<text x="100" y="115" font-size="50" text-anchor="middle" 
+        fill="${answers.textColor}">${answers.initials}</text></svg>`
+        fs.writeFileSync(`./examples/${answers.fileName}.svg`, svg);
       }
+
       if (answers.shape === 'square') {
         shape = new Square (shapeColor)
 
+        // Edited the x's and y's so that the text will be in the middle and inside the shape
         let svg = 
         `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200">
         ${shape.render()}<text x="90" y="145" font-size="50" text-anchor="middle" 
         fill="${answers.textColor}">${answers.initials}</text></svg>`
-    fs.writeFileSync(`./examples/${answers.fileName}.svg`, svg);
+        fs.writeFileSync(`./examples/${answers.fileName}.svg`, svg);
       }
+
       if (answers.shape === 'triangle') {
           shape = new Triangle (shapeColor)
 
-          let svg = 
-          `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200">
-          ${shape.render()}<text x="150" y="160" font-size="50" text-anchor="middle" 
-          fill="${answers.textColor}">${answers.initials}</text></svg>`
-      fs.writeFileSync(`./examples/${answers.fileName}.svg`, svg);
+        // Edited the x's and y's so that the text will be in the middle and inside the shape
+        let svg = 
+        `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="200">
+        ${shape.render()}<text x="150" y="160" font-size="50" text-anchor="middle" 
+        fill="${answers.textColor}">${answers.initials}</text></svg>`
+        fs.writeFileSync(`./examples/${answers.fileName}.svg`, svg);
       }
   });
 };

@@ -53,7 +53,8 @@ This project is under [MIT](https://choosealicense.com/licenses/mit/) license.
 * ----ADD PHOTOS DO NOT FORGET
 
 ## Video 
-* ---ADD VIDEOS DO NOT FORGET
+* Here is the link for the tutorial on how to make a logo using node.js and OOP: 
+  https://drive.google.com/file/d/1Lv-oSYWn9HQ5t9WihjG_rFuy7ReL5fjJ/view
   
 
 ## Contributions
